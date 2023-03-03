@@ -93,10 +93,10 @@
                 <hr>
                 <?php if(isset($_POST['kirim'])) : ?>
                     Nama Customer : 
-                    <?php if(!empty($_POST['customer'])){echo $_POST['customer'];} ?>
+                    <?php if(!empty($_POST['customer'])){echo $_POST['customer'];}else{echo "-";} ?>
                     <br>
                     Produk Pilihan : 
-                    <?php if(!empty($_POST['produk'])){echo $_POST['produk'];} ?>
+                    <?php if(!empty($_POST['produk'])){echo $_POST['produk'];}else{echo "-";} ?>
                     <br>
                     Jumlah Beli :
                     <?php if(!empty($_POST['jumlah'])){echo $_POST['jumlah'];}else{echo 0;} ?>
