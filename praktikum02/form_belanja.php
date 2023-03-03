@@ -28,22 +28,22 @@
                         <div class="form-group row">
                             <label for="customer" class="col-4 col-form-label">Customer</label> 
                             <div class="col-8">
-                            <input id="customer" name="customer" placeholder="Nama Customer" type="text" class="form-control">
+                            <input id="customer" name="customer" placeholder="Nama Customer" value="<?php if(isset($_POST['customer'])){echo $_POST['customer'];} ?>" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-4">Pilih Produk</label> 
                             <div class="col-8">
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input name="produk" id="produk_0" type="radio" class="custom-control-input" value="TV"> 
+                                <input name="produk" id="produk_0" type="radio" class="custom-control-input" value="TV" <?php if(isset($_POST['produk']) && $_POST['produk'] == 'TV'){echo "checked";} ?>> 
                                 <label for="produk_0" class="custom-control-label">TV</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input name="produk" id="produk_1" type="radio" class="custom-control-input" value="Kulkas"> 
+                                <input name="produk" id="produk_1" type="radio" class="custom-control-input" value="Kulkas" <?php if(isset($_POST['produk']) && $_POST['produk'] == 'Kulkas'){echo "checked";} ?>> 
                                 <label for="produk_1" class="custom-control-label">Kulkas</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input name="produk" id="produk_2" type="radio" class="custom-control-input" value="Mesin Cuci"> 
+                                <input name="produk" id="produk_2" type="radio" class="custom-control-input" value="Mesin Cuci" <?php if(isset($_POST['produk']) && $_POST['produk'] == 'Mesin Cuci'){echo "checked";} ?>> 
                                 <label for="produk_2" class="custom-control-label">Mesin Cuci</label>
                             </div>
                             </div>
@@ -51,7 +51,7 @@
                         <div class="form-group row">
                             <label for="jumlah" class="col-4 col-form-label">Jumlah</label> 
                             <div class="col-8">
-                            <input id="jumlah" name="jumlah" placeholder="Jumlah" type="text" class="form-control">
+                            <input id="jumlah" name="jumlah" placeholder="Jumlah" type="text" value="<?php if(isset($_POST['jumlah'])){echo $_POST['jumlah'];} ?>" class="form-control">
                             </div>
                         </div> 
                         <div class="form-group row">
