@@ -71,11 +71,11 @@
                 <label class="col-4">Jenis Kelamin</label> 
                 <div class="col-8">
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input name="jenkel" id="jenkel_0" type="radio" class="custom-control-input" value="Laki-Laki" <?php if(isset($_POST['jenkel']) && $_POST['jenkel'] == "Laki-Laki"){echo "selected";} ?>> 
+                    <input name="jenkel" id="jenkel_0" type="radio" class="custom-control-input" value="Laki-Laki" <?php if(isset($_POST['jenkel']) && $_POST['jenkel'] == "Laki-Laki"){echo "checked";} ?>> 
                     <label for="jenkel_0" class="custom-control-label">Laki-Laki</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input name="jenkel" id="jenkel_1" type="radio" class="custom-control-input" value="Perempuan" <?php if(isset($_POST['jenkel']) && $_POST['jenkel'] == "Perempuan"){echo "selected";} ?>> 
+                    <input name="jenkel" id="jenkel_1" type="radio" class="custom-control-input" value="Perempuan" <?php if(isset($_POST['jenkel']) && $_POST['jenkel'] == "Perempuan"){echo "checked";} ?>> 
                     <label for="jenkel_1" class="custom-control-label">Perempuan</label>
                 </div>
                 </div>
@@ -134,7 +134,7 @@
             
             $nama = isset($_POST['nama_lengkap']) && $_POST['nama_lengkap']!= NULL ? $_POST['nama_lengkap'] : "-";
             $nim = isset($_POST['nim']) != NULL ? $_POST['nim'] : "-";
-            $jenkel = isset($_POST['jenkel']) && $_POST['nim'] != NULL ? $_POST['jenkel'] : "-";
+            $jenkel = isset($_POST['jenkel']) && $_POST['jenkel'] != NULL ? $_POST['jenkel'] : "-";
             $program_studi = isset($_POST['program_studi']) && $_POST['program_studi'] != NULL ? $_POST['program_studi'] : "-";
             $skills = isset($_POST['skill']) && $_POST['skill'] != NULL ? $_POST['skill'] : [];
             $email = isset($_POST['email']) && $_POST['email'] != NULL ? $_POST['email'] : "-";
