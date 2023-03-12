@@ -99,8 +99,8 @@
                         foreach($nilaiSkill as $skill => $nilai) : 
                     ?>
                     <div class="custom-control custom-checkbox custom-control-inline">
-                        <input name="skill[]" id="skill[]_<?= $no; ?>" type="checkbox" class="custom-control-input" value="<?= $skill ?>" <?php if(in_array($skill,$_POST['skill'])){echo "checked";} ?>> 
-                        <label for="skill[]_<?= $no; ?>" class="custom-control-label"><?= $skill ?></label>
+                        <input name="skill[]" id="skill[]_<?php echo $no; ?>" type="checkbox" class="custom-control-input" value="<?php echo $skill ?>" <?php if(isset($_POST['skill'])){if(in_array($skill,$_POST['skill'])){echo "checked";}}?>> 
+                        <label for="skill[]_<?php echo $no; ?>" class="custom-control-label"><?php echo $skill ?></label>
                     </div>
                     <?php 
                         $no++;
@@ -117,7 +117,7 @@
                         <i class="fa fa-audio-description"></i>
                     </div>
                     </div> 
-                    <input id="email" name="email" type="text" class="form-control">
+                    <input id="email" name="email" type="text" class="form-control" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>">
                 </div>
                 </div>
             </div> 
