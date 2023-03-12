@@ -8,7 +8,7 @@
         "Python"=>30,
         "Java"=>50
     ];
-     
+    $domisilis = ['Jakarta','Bogor','Depok','Tanggerang','Bekasi','Lainnya'];
     function checkScore($score){
         if($score > 100){
             return "Sangat Baik";
@@ -50,7 +50,7 @@
                         <i class="fa fa-user-circle-o"></i>
                     </div>
                     </div> 
-                    <input id="nim" name="nim" type="text" class="form-control">
+                    <input id="nim" name="nim" type="text" class="form-control" value="<?php if(isset($_POST['nim'])){echo $_POST['nim'];} ?>">
                 </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                         <i class="fa fa-address-book"></i>
                     </div>
                     </div> 
-                    <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control">
+                    <input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" value="<?php if(isset($_POST['nama_lengkap'])){echo $_POST['nama_lengkap'];} ?>">
                 </div>
                 </div>
             </div>
@@ -109,6 +109,16 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="domisili" class="col-4 col-form-label">Domisili</label> 
+                <div class="col-8">
+                <select id="domisili" name="domisili" class="custom-select">
+                    <?php foreach($domisilis as $domisili) : ?>
+                    <option value="<?php echo $domisili ?>" <?php if(isset($_POST['domisili']) && $_POST['domisili'] == $domisili){echo "selected";} ?>><?php echo $domisili ?></option>
+                    <?php endforeach; ?>
+                </select>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="email" class="col-4 col-form-label">Email</label> 
                 <div class="col-8">
                 <div class="input-group">
@@ -136,6 +146,7 @@
             $nim = isset($_POST['nim']) != NULL ? $_POST['nim'] : "-";
             $jenkel = isset($_POST['jenkel']) && $_POST['jenkel'] != NULL ? $_POST['jenkel'] : "-";
             $program_studi = isset($_POST['program_studi']) && $_POST['program_studi'] != NULL ? $_POST['program_studi'] : "-";
+            $domisili = isset($_POST['domisili']) && $_POST['domisili'] != NULL ? $_POST['domisili'] : "-";
             $skills = isset($_POST['skill']) && $_POST['skill'] != NULL ? $_POST['skill'] : [];
             $email = isset($_POST['email']) && $_POST['email'] != NULL ? $_POST['email'] : "-";
             $score = 0;
@@ -183,6 +194,10 @@
                 <tr>
                     <td>Kategori Skill</td>
                     <td> : <?= $predikat ?></td>
+                </tr>
+                <tr>
+                    <td>Domisili</td>
+                    <td> : <?= $domisili ?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
