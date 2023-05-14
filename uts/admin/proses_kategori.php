@@ -1,5 +1,6 @@
 <?php
     require_once '../config/db.php';
+    ob_start();
     if(isset($_GET['action']) && $_GET['action'] == 'delete'){
         $id = $_GET['id'];
         $sql = "DELETE FROM kategori_produk WHERE id=?";

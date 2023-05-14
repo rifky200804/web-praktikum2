@@ -63,7 +63,7 @@
                     <td><?= $value['jumlah_pesanan'] ?></td>
                     <td><?= "Rp. ".number_format($value['jumlah_pesanan'] * $value['harga'],2,',','.') ?></td>
                     <td><?= $value['deskripsi']?></td>
-                    <td><a href="../proses_pesanan.php?id=<?= $value['id'] ?>&action=delete" class="btn btn-danger">Delete</a></td>
+                    <td><a href="../proses_pesanan.php?id=<?= $value['id'] ?>&action=delete" class="btn btn-danger" onclick="if(!confirm('Anda Yakin Hapus Data Produk <?=$value['nama']?>?')) {return false}">Delete</a></td>
                   </tr>
                 <?php $no++;?>
                 <?php endforeach; ?>
