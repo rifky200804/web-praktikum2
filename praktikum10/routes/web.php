@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\ProdukController;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/produk', [ProdukController::class, 'index']);
+Route::get('/kategori-produk', [KategoriProdukController::class, 'index']);
+
 
 Route::get('/home', function(){return view('front.home');});
 Route::get('/about', function(){return view('front.about');});

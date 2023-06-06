@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produk;
 use App\Models\KategoriProduk;
 
-class ProdukController extends Controller
+class KategoriProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,12 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        // Jalanin fungsi getAllProduk dari model
-        $produk = Produk::getAllProduk();
+        $kategoriProduk = KategoriProduk::getAllKategoriProduk();
 
         // Mengirim data produk ke view 'admin.produk.produk'
-        return view('admin.produk.produk', compact('produk'));
+        return view('admin.kategori_produk.index', compact('kategoriProduk'));  
     }
+
     /**
      * Show the form for creating a new resource.
      *
