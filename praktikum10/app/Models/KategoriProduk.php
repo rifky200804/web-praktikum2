@@ -21,7 +21,7 @@ class KategoriProduk extends Model
     // Definisi relasi "has many" dengan model Produk
     public function produk()
     {
-        return $this->hasMany(Produk::class);
+        return $this->hasMany(Produk::class,'kategori_produk_id','id');
     }
 
     public static function getAllKategoriProduk()

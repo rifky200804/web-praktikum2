@@ -12,23 +12,23 @@ class Produk extends Model
 
     // Menentukan nama tabel yang terhubung dengan model ini
     protected $table = 'produk';
-
+    public $timestamps = false;
     // Kolom-kolom yang dapat diisi secara massal
     protected $fillable = [
-        'kode',             // Kode produk
-        'nama',             // Nama produk
-        'harga_jual',       // Harga jual produk
-        'harga_beli',       // Harga beli produk
-        'stok',             // Jumlah stok produk
-        'min_stok',         // Jumlah minimal stok produk
-        'deskripsi',        // Deskripsi produk
-        'kategori_produk_id',// ID kategori produk
+        'kode',            
+        'nama',            
+        'harga_jual',      
+        'harga_beli',      
+        'stok',             
+        'min_stok',        
+        'deskripsi',        
+        'kategori_produk_id',
     ];
 
     // Definisi relasi "belongs to" dengan model KategoriProduk
     public function kategori_produk()
     {
-        return $this->belongsTo(KategoriProduk::class);
+        return $this->belongsTo(KategoriProduk::class,'kategori_produk_id','id');
     }
 
 		// Bikin fungsi nampilin semua data
