@@ -113,4 +113,11 @@ class ProdukController extends Controller
 
         return redirect('produk')->with('success', 'Produk berhasil dihapus');
     }
+
+    public function publicIndex(){
+        $produk = Produk::getAllProduk();
+
+        // Mengirim data produk ke view 'admin.produk.produk'
+        return view('welcome', compact('produk'));
+    }
 }
